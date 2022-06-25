@@ -2,7 +2,7 @@ import Button from "@material-ui/core/Button";
 // TypeScript types
 import { CartItemType } from "../App";
 // Styles import
-import { Wrapper } from "../App.styles";
+import { Wrapper } from "./Item.styles";
 
 type Props = {
   item: CartItemType;
