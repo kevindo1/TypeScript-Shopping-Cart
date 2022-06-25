@@ -20,7 +20,7 @@ export type CartItemType = {
 };
 
 // first await is to convert it to json, second await is the actual fetch of the API
-const getProducts = async () =>
+const getProducts = async (): Promise<CartItemType> =>
   await (await fetch("https://fakestoreapi.com/products")).json();
 
 const App = () => {
