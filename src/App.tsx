@@ -8,6 +8,16 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import Badge from "@material-ui/core/Badge";
 // Styles imports
 import { Wrapper } from "./App.styles";
+// TypeScript Types
+export type CartItemType = {
+  id: number;
+  category: string;
+  description: string;
+  image: string;
+  price: number;
+  title: string;
+  amount: number;
+};
 
 // first await is to convert it to json, second await is the actual fetch of the API
 const getProducts = async () =>
