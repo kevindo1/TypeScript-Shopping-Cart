@@ -20,10 +20,23 @@ export type CartItemType = {
 };
 
 // first await is to convert it to json, second await is the actual fetch of the API
-const getProducts = async (): Promise<CartItemType> =>
+const getProducts = async (): Promise<CartItemType[]> =>
   await (await fetch("https://fakestoreapi.com/products")).json();
 
 const App = () => {
+  const { data, isLoading, error } = useQuery<CartItemType[]>(
+    "products",
+    getProducts
+  );
+
+  const getTotalItems = () => null;
+
+  const handleAddToCart = () => null;
+
+  const handleDeleteFromCart = () => null;
+
+  if (isLoading) return <LinearProgress />;
+  if (error) return <div>Something went wrong.. </div>;
   return <div className="App">Hello World</div>;
 };
 
